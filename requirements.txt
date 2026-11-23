@@ -1,0 +1,56 @@
+## 1. User input
+
+When the program starts, ask the user to enter:
+
+- Sensor type (for example, temperature or light).
+- Number of readings to generate.
+- Minimum sensor value.
+- Maximum sensor value.
+- Alert threshold.
+
+## 2. Generate sensor readings
+
+Use Python's `random` module to generate the requested number of simulated sensor readings.
+
+Requirements:
+
+- Store the readings in a list or NumPy array.
+- Use the minimum and maximum values entered by the user.
+- Use a function to generate the readings.
+- Make the results reproducible with `random.seed()`.
+
+## 3. Analyze the data with NumPy
+
+Calculate and display:
+
+- Number of readings.
+- Mean.
+- Minimum.
+- Maximum.
+- Standard deviation.
+- Number of readings above the alert threshold.
+
+Identify and display the readings that exceed the threshold.
+
+## 4. Visualize the data with Matplotlib
+
+Create two graphs:
+
+1. **Line plot:** Show sensor readings against sample number. Add a horizontal line indicating the alert threshold.
+2. **Histogram:** Show the distribution of the readings.
+
+Both graphs should include appropriate titles, axis labels, and a grid. Add a legend where appropriate.
+
+## 5. Save the data
+
+Save the generated readings to a CSV file.
+
+The CSV file should contain at least:
+- Sample number.
+- Sensor reading.
+
+Use Python's `csv` module.
+
+## 6. Choice
+
+Allow the user to choose between generating new sensor readings and loading readings from an existing CSV file.
