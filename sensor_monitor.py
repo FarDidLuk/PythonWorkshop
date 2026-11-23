@@ -8,6 +8,7 @@ import matplotlib.pyplot as plt
 # 1. Get user input
 
 def get_user_input():
+    """VRAAG DE GEBRUIKER OM SENSOR TYPE, AANTAL METINGEN, MINIMUM, MAXIMUM EN DREMPELWAARDEN"""
 
     print("\n SENSOR MONITOR")
 
@@ -58,6 +59,7 @@ def get_user_input():
 # 2. Generate sensor readings
 
 def generate_readings(count, minimum, maximum):
+    """GENEREER EEN LIJST VAN SENSORWAARDEN BINNEN HET GEGEVEN BEREIK"""
 
     random.seed(42)
 
@@ -75,6 +77,7 @@ def generate_readings(count, minimum, maximum):
 # 3. Calculate statistics with NumPy
 
 def calculate_statistics(readings):
+    """BEREKEN GEMIDDELDE, MINIMUM, MAXIMUM, STANDAARDAFWIJKING EN AANTAL METINGEN"""
 
     mean = np.mean(readings)
 
@@ -93,6 +96,7 @@ def calculate_statistics(readings):
 # 4. Find readings above the alert threshold
 
 def find_outliers(readings, threshold):
+    """VIND ALLE SENSORWAARDEN DIE HET DREMPELWAARDE OVERTREFFEN"""
 
     alert_readings = [
         reading for reading in readings
@@ -105,6 +109,7 @@ def find_outliers(readings, threshold):
 # Display the analysis
 
 def display_statistics(readings, threshold):
+    """DISPLAY DE STATISTIEKEN EN ALERTS VOOR DE SENSORWAARDEN"""
 
     mean, minimum, maximum, standard_deviation, number_of_readings = calculate_statistics(
         readings)
@@ -133,6 +138,7 @@ def display_statistics(readings, threshold):
 # 5. Save readings to CSV
 
 def save_readings(readings, filename="sensor_readings.csv"):
+    """OPSLAAN VAN SENSORWAARDEN IN EEN CSV-BESTAND"""
 
     try:
 
@@ -160,6 +166,7 @@ def save_readings(readings, filename="sensor_readings.csv"):
 # 6. Load readings from an existing CSV file
 
 def load_readings(filename):
+    """LAAD SENSORWAARDEN VAN EEN BESTAAND CSV-BESTAND"""
 
     sample_numbers = []
     readings = []
@@ -194,6 +201,7 @@ def load_readings(filename):
 # 7. Visualize sensor readings with a line plot
 
 def plot_readings(readings, threshold, sensor_type, sample_numbers=None):
+    """VISUALISEER SENSORWAARDEN MET EEN LIJNENGRAFIEK"""
 
     if sample_numbers is None:
         sample_numbers = range(1, len(readings) + 1)
@@ -234,6 +242,7 @@ def plot_readings(readings, threshold, sensor_type, sample_numbers=None):
 # 8. Create a histogram
 
 def plot_histogram(readings, sensor_type):
+    """MAAK EEN HISTOGRAM VAN DE SENSORWAARDEN"""
 
     plt.figure(figsize=(10, 6))
 
@@ -260,6 +269,7 @@ def plot_histogram(readings, sensor_type):
 # 9. Main function
 
 def main():
+    """MAIN FUNCTIE OM DE SENSOR MONITOR TE STARTEN EN DE GEBRUIKER TE LEIDEN DOOR HET PROCES"""
 
     print("\n SENSOR DATA ANALYSIS ")
 
